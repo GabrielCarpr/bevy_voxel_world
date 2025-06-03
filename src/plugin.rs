@@ -186,6 +186,8 @@ where
                     reflectance: 0.05,
                     metallic: 0.05,
                     perceptual_roughness: 0.95,
+                    double_sided: true,
+                    cull_mode: None,
                     ..default()
                 },
                 extension: StandardVoxelMaterial {
