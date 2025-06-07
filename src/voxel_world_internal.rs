@@ -200,8 +200,10 @@ where
             );
 
             if !has_chunk {
-                let chunk_entity = commands.spawn(NeedsRemesh).id();
-                commands.entity(world_root).add_child(chunk_entity);
+                let chunk_entity = commands
+                    .spawn((NeedsRemesh, Name::new(format!("Chunk: {}", chunk_position))))
+                    .id();
+                // commands.entity(world_root).add_child(chunk_entity);
                 let chunk = Chunk::<C>::new(chunk_position, chunk_entity);
 
                 chunk_map_insert_buffer
